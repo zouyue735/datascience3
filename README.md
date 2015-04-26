@@ -7,7 +7,5 @@ Note that you can change the path variables in the script to let it point to whe
 For more information about the data, see
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-Here are the data for the project: 
 
-
-See CodeBook.md for description of the cleaned data.
+See CodeBook for description of the cleaned data.
