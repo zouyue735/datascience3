@@ -58,11 +58,10 @@ summary <- lapply(data_merged[1:66],function(measure) {
 
 # convert the summary to a data frame so it can be saved in a file
 summary_data_frame <- data.frame(lapply(summary,function(measure) {
-  df <- data.frame(cbind(sapply(measure,sum),rep(rownames(measure),length(colnames(measure))),rep(colnames(measure),length(rownames(measure)))))
-  colnames(df) <- c('mean','activity','subject')
-  df[1] <- as.numeric(as.character(df[,1]))
-  df
+  sapply(measure,sum)
 }))
+summary_data_frame <- cbind(summary_data_frame,rep(rownames(summary[[1]]),length(colnames(summary[[1]]))),rep(colnames(summary[[1]]),length(rownames(summary[[1]]))))
+colnames(summary_data_frame) <- c(colnames(data_merged)[1:66],'activity','subject')
 
 # write data to a text file
 write.table(data_merged,'merged_data.txt',row.names=FALSE)
